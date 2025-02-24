@@ -1,0 +1,7 @@
+Lexical Analyser
+- Reads source code char-by-char
+- Keeps track of position in file
+
+- Identifies tokens, and supplies them one-by-one to the Syntax Analyser class, using getNextToken()
+
+
