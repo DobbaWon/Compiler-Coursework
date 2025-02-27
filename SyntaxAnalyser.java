@@ -4,8 +4,11 @@ import java.io.IOException;
 
 
 public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
+    private String filename;
+
     public SyntaxAnalyser(String filename) throws IOException {
         lex = new LexicalAnalyser(filename);
+        this.filename = filename;
     }
     
     public void acceptTerminal(int symbol) throws IOException, CompilationException {
@@ -13,7 +16,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
             myGenerate.insertTerminal(nextToken);
             nextToken = lex.getNextToken();
         } else {
-            myGenerate.reportError(nextToken, "Expected " + Token.getName(symbol) + " but found '" + nextToken.text + "'");
+            myGenerate.reportError(nextToken, "Expected " + Token.getName(symbol) + " but found '" + nextToken.text + "' FILE: " + filename);
         }
     }
 
@@ -28,26 +31,29 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
 
         acceptTerminal(Token.endSymbol);
         myGenerate.finishNonterminal("StatementPart");
-
-        // Hopefully at the end of the file, is the EOF symbol:
-        acceptTerminal(Token.eofSymbol);
-        myGenerate.reportSuccess();
     }
 
-    // Parses line by line in the file, waiting for the semicolon.
+    // Parses line by line in the file.
     private void _statementList_() throws IOException, CompilationException {
-        myGenerate.commenceNonterminal("StatementList");
-
-        // As long as we're not at the end of the file already, or the end of a condition:
         while (nextToken.symbol != Token.endSymbol && nextToken.symbol != Token.eofSymbol && nextToken.symbol != Token.elseSymbol) {
+            myGenerate.commenceNonterminal("StatementList");
+            
             _statement_();
-            acceptTerminal(Token.semicolonSymbol);
+    
+            if (nextToken.symbol == Token.semicolonSymbol) {
+                acceptTerminal(Token.semicolonSymbol);
+                _statementList_();
+            } else if (nextToken.symbol != Token.endSymbol && nextToken.symbol != Token.elseSymbol && nextToken.symbol != Token.semicolonSymbol) {
+                myGenerate.reportError(nextToken, "Expected ';' or 'end'. FILE: " + filename);
+            }
+    
+            myGenerate.finishNonterminal("StatementList");
         }
-
-        myGenerate.finishNonterminal("StatementList");
     }
+    
+    
 
-    // Parses a line in the file, starting from the first 'word'?
+    // Parses a line in the file, starting from the first 'word'(?)
     private void _statement_() throws IOException, CompilationException {
         myGenerate.commenceNonterminal("Statement");
 
@@ -70,15 +76,17 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
             case Token.doSymbol:
                 _untilStatement_();
                 break;
+            case Token.elseSymbol:
+                myGenerate.reportError(nextToken, "'ELSE' found without 'IF' preceeding. FILE: " + filename);
             default:
-                myGenerate.reportError(nextToken, "Unknown statement.");
+                myGenerate.reportError(nextToken, "Unknown statement. FILE: " + filename);
                 break;
         }
 
         myGenerate.finishNonterminal("Statement");
     }
 
-    // Sets a variable to be a value.
+    // Sets a variable to be a value, also handling string constants in here:
     private void _assignmentStatement_() throws IOException, CompilationException {
         myGenerate.commenceNonterminal("AssignmentStatement");
 
@@ -86,8 +94,12 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
         acceptTerminal(Token.identifier);
         acceptTerminal(Token.becomesSymbol);
 
-        // The variable value (term) and then any extras, e.g. '*, /, +, -'
-        _expression_();
+        // check for string constant first:
+        if (nextToken.symbol == Token.stringConstant){
+            acceptTerminal(Token.stringConstant);
+        } else{
+            _expression_();
+        }
 
         myGenerate.finishNonterminal("AssignmentStatement");
     }
@@ -207,6 +219,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
     
     // Gets the list of arguments in any procedure call. Seems like there's never more than one, but just in case.
     private void _argumentList_() throws IOException, CompilationException {
+        acceptTerminal(Token.leftParenthesis);
         myGenerate.commenceNonterminal("ArgumentList");
     
         // No arguments:
@@ -225,18 +238,18 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
                     if (nextToken.symbol == Token.identifier) {
                         acceptTerminal(Token.identifier);
                     } else {
-                        myGenerate.reportError(nextToken, "Expected an identifier after a comma.");
+                        myGenerate.reportError(nextToken, "Expected an identifier after a comma. FILE: " + filename);
                     }
                 }
             } else {
-                myGenerate.reportError(nextToken, "Expected an identifier as an argument.");
+                myGenerate.reportError(nextToken, "Expected an identifier as an argument. FILE: " + filename);
             }
     
             // Ensure that the next token after the arguments is a closing parenthesis
+            myGenerate.finishNonterminal("ArgumentList");
             acceptTerminal(Token.rightParenthesis);
         }
     
-        myGenerate.finishNonterminal("ArgumentList");
     }
 
     // The condition that these statements must follow.
@@ -257,6 +270,8 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
 
     // Operators used for comparison(?).
     private void _conditionalOperator() throws IOException, CompilationException {
+        myGenerate.commenceNonterminal("ConditionalOperator");
+
         // Check that it is a valid operator:
         switch (nextToken.symbol) {
             case Token.equalSymbol:
@@ -266,9 +281,10 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
             case Token.greaterEqualSymbol:
             case Token.greaterThanSymbol:
                 acceptTerminal(nextToken.symbol);
+                myGenerate.finishNonterminal("ConditionalOperator");
                 break;
             default:
-                myGenerate.reportError(nextToken, "Expected a comparison operator but found '" + nextToken.text + "'");
+                myGenerate.reportError(nextToken, "Expected a comparison operator but found '" + nextToken.text + "' FILE: " + filename);
                 break;
         }
     }
@@ -280,7 +296,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
         _term_();
         while (nextToken.symbol == Token.plusSymbol || nextToken.symbol == Token.minusSymbol) {
             acceptTerminal(nextToken.symbol);
-            _term_();
+            _expression_();
         }
 
         myGenerate.finishNonterminal("Expression");
@@ -299,22 +315,21 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
             || nextToken.symbol == Token.modSymbol) {
             acceptTerminal(nextToken.symbol);
 
-            // Then it should be succeeded by another factor, and loop back round:
-            _factor_();
+            // Then it should be succeeded by another ter,, and loop back round:
+            _term_();
         }
 
         myGenerate.finishNonterminal("Term");
     }
 
-    // Either a raw number, raw string, or a variable reference. (or also a bigger expression (this is confusing))
+    // Either a raw number, or a variable reference. (or also a bigger expression (this is confusing))
     private void _factor_() throws IOException, CompilationException {
         myGenerate.commenceNonterminal("Factor");
     
-        // Check if it is either a number, string, or variable reference:
+        // Check if it is either a number, or variable reference:
         switch (nextToken.symbol) {
             case Token.identifier:
             case Token.numberConstant:
-            case Token.stringConstant:
                 acceptTerminal(nextToken.symbol);
                 break;
             
@@ -330,7 +345,7 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
                 break;
     
             default:
-                myGenerate.reportError(nextToken, "Expected an identifier, number, string, or '(' for a parenthesized expression.");
+                myGenerate.reportError(nextToken, "Expected an identifier, number, string, or '(' for a parenthesized expression. FILE: " + filename);
                 break;
         }
     
