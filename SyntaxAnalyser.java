@@ -255,18 +255,23 @@ public class SyntaxAnalyser extends AbstractSyntaxAnalyser {
     // The condition that these statements must follow.
     private void _condition_() throws IOException, CompilationException {
         myGenerate.commenceNonterminal("Condition");
-
+    
         // Should start with an identifier:
         acceptTerminal(Token.identifier);
-
+    
         // Check for a conditional operator:
         _conditionalOperator();
-
-        // After the operator, we expect a number constant:
-        acceptTerminal(Token.numberConstant);
-
+    
+        // After the operator, we expect either a number constant or an identifier:
+        if (nextToken.symbol == Token.numberConstant || nextToken.symbol == Token.identifier) {
+            acceptTerminal(nextToken.symbol);
+        } else {
+            myGenerate.reportError(nextToken, "Expected a number constant or identifier after operator. FILE: " + filename);
+        }
+    
         myGenerate.finishNonterminal("Condition");
     }
+    
 
     // Operators used for comparison(?).
     private void _conditionalOperator() throws IOException, CompilationException {

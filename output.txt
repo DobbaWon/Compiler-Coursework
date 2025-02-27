@@ -16,6 +16,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -30,6 +31,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -62,6 +64,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -84,11 +87,13 @@
 312END AssignmentStatement
 312END Statement
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 312TOKEN loop on line 7
 312END WhileStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 8
@@ -97,6 +102,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 8
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 9
@@ -109,6 +115,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 9
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 10
@@ -120,6 +127,11 @@
 312TOKEN ) on line 10
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 11
 312END StatementPart
@@ -142,6 +154,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -156,6 +169,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -188,6 +202,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -210,11 +225,13 @@
 312END AssignmentStatement
 312END Statement
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 312TOKEN loop on line 7
 312END WhileStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 8
@@ -223,6 +240,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 8
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 9
@@ -235,6 +253,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 9
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 10
@@ -246,6 +265,11 @@
 312TOKEN ) on line 10
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 11
 312END StatementPart
@@ -271,6 +295,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -285,6 +310,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN IfStatement
 312TOKEN if on line 4
@@ -317,6 +343,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 6
@@ -325,6 +352,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 6
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 7
@@ -337,6 +365,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 8
@@ -348,6 +377,9 @@
 312TOKEN ) on line 8
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 9
 
@@ -367,6 +399,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -381,6 +414,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -413,6 +447,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -436,11 +471,13 @@
 312END Statement
 312TOKEN ; on line 6
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 312TOKEN loop on line 7
 312END WhileStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 8
@@ -449,6 +486,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 8
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 9
@@ -461,6 +499,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 9
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 10
@@ -472,6 +511,11 @@
 312TOKEN ) on line 10
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 11
 312END StatementPart
@@ -494,6 +538,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -508,6 +553,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -540,6 +586,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -562,6 +609,7 @@
 312END AssignmentStatement
 312END Statement
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 
 312FILE Programs Folder\program6
@@ -580,6 +628,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -594,6 +643,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -652,6 +702,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -694,11 +745,13 @@
 312END AssignmentStatement
 312END Statement
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 312TOKEN loop on line 7
 312END WhileStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 8
@@ -707,6 +760,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 8
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 9
@@ -719,6 +773,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 9
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 10
@@ -730,6 +785,11 @@
 312TOKEN ) on line 10
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 11
 312END StatementPart
@@ -752,6 +812,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -766,6 +827,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312END StatementList
 312END StatementList
 
 312FILE Programs Folder\program8
@@ -784,6 +846,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -798,6 +861,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -830,6 +894,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -852,11 +917,13 @@
 312END AssignmentStatement
 312END Statement
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 312TOKEN loop on line 7
 312END WhileStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 8
@@ -865,6 +932,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 8
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 9
@@ -877,6 +945,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 9
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 10
@@ -888,6 +957,11 @@
 312TOKEN ) on line 10
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 11
 312END StatementPart
@@ -908,6 +982,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 1
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x3' on line 2
@@ -922,6 +997,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ForStatement
 312TOKEN for on line 3
@@ -941,6 +1017,94 @@
 312BEGIN ConditionalOperator
 312TOKEN < on line 3
 312END ConditionalOperator
+312TOKEN IDENTIFIER 'x1' on line 3
+312END Condition
+312TOKEN ; on line 3
+312TOKEN IDENTIFIER 'x2' on line 3
+312TOKEN := on line 3
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN IDENTIFIER 'x2' on line 3
+312END Factor
+312END Term
+312TOKEN + on line 3
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN NUMBER '1' on line 3
+312END Factor
+312END Term
+312END Expression
+312END Expression
+312TOKEN ) on line 3
+312TOKEN do on line 3
+312BEGIN StatementList
+312BEGIN Statement
+312BEGIN ProcedureStatement
+312TOKEN call on line 4
+312TOKEN IDENTIFIER 'put' on line 4
+312TOKEN ( on line 4
+312BEGIN ArgumentList
+312TOKEN IDENTIFIER 'x1' on line 4
+312TOKEN , on line 4
+312TOKEN IDENTIFIER 'x2' on line 4
+312TOKEN , on line 4
+312TOKEN IDENTIFIER 'x3' on line 4
+312END ArgumentList
+312TOKEN ) on line 4
+312END ProcedureStatement
+312END Statement
+312TOKEN ; on line 4
+312BEGIN StatementList
+312BEGIN Statement
+312BEGIN AssignmentStatement
+312TOKEN IDENTIFIER 'x3' on line 5
+312TOKEN := on line 5
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN IDENTIFIER 'x3' on line 5
+312END Factor
+312END Term
+312TOKEN + on line 5
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN IDENTIFIER 'x2' on line 5
+312END Factor
+312END Term
+312END Expression
+312END Expression
+312END AssignmentStatement
+312END Statement
+312END StatementList
+312END StatementList
+312TOKEN end on line 6
+312TOKEN loop on line 6
+312END ForStatement
+312END Statement
+312TOKEN ; on line 6
+312BEGIN StatementList
+312BEGIN Statement
+312BEGIN ProcedureStatement
+312TOKEN call on line 7
+312TOKEN IDENTIFIER 'put' on line 7
+312TOKEN ( on line 7
+312BEGIN ArgumentList
+312TOKEN IDENTIFIER 'x3' on line 7
+312END ArgumentList
+312TOKEN ) on line 7
+312END ProcedureStatement
+312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312TOKEN end on line 8
+312END StatementPart
+312TOKEN EOF on line 9
+312SUCCESS
 
 312FILE Programs Folder\program10
 312BEGIN StatementPart
@@ -958,6 +1122,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 0
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x3' on line 0
@@ -972,6 +1137,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 0
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ForStatement
 312TOKEN for on line 0
@@ -991,6 +1157,94 @@
 312BEGIN ConditionalOperator
 312TOKEN < on line 0
 312END ConditionalOperator
+312TOKEN IDENTIFIER 'x1' on line 0
+312END Condition
+312TOKEN ; on line 0
+312TOKEN IDENTIFIER 'x2' on line 0
+312TOKEN := on line 0
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN IDENTIFIER 'x2' on line 0
+312END Factor
+312END Term
+312TOKEN + on line 0
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN NUMBER '1' on line 0
+312END Factor
+312END Term
+312END Expression
+312END Expression
+312TOKEN ) on line 0
+312TOKEN do on line 0
+312BEGIN StatementList
+312BEGIN Statement
+312BEGIN ProcedureStatement
+312TOKEN call on line 0
+312TOKEN IDENTIFIER 'put' on line 0
+312TOKEN ( on line 0
+312BEGIN ArgumentList
+312TOKEN IDENTIFIER 'x1' on line 0
+312TOKEN , on line 0
+312TOKEN IDENTIFIER 'x2' on line 0
+312TOKEN , on line 0
+312TOKEN IDENTIFIER 'x3' on line 0
+312END ArgumentList
+312TOKEN ) on line 0
+312END ProcedureStatement
+312END Statement
+312TOKEN ; on line 0
+312BEGIN StatementList
+312BEGIN Statement
+312BEGIN AssignmentStatement
+312TOKEN IDENTIFIER 'x3' on line 0
+312TOKEN := on line 0
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN IDENTIFIER 'x3' on line 0
+312END Factor
+312END Term
+312TOKEN + on line 0
+312BEGIN Expression
+312BEGIN Term
+312BEGIN Factor
+312TOKEN IDENTIFIER 'x2' on line 0
+312END Factor
+312END Term
+312END Expression
+312END Expression
+312END AssignmentStatement
+312END Statement
+312END StatementList
+312END StatementList
+312TOKEN end on line 0
+312TOKEN loop on line 0
+312END ForStatement
+312END Statement
+312TOKEN ; on line 0
+312BEGIN StatementList
+312BEGIN Statement
+312BEGIN ProcedureStatement
+312TOKEN call on line 0
+312TOKEN IDENTIFIER 'put' on line 0
+312TOKEN ( on line 0
+312BEGIN ArgumentList
+312TOKEN IDENTIFIER 'x3' on line 0
+312END ArgumentList
+312TOKEN ) on line 0
+312END ProcedureStatement
+312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312TOKEN end on line 0
+312END StatementPart
+312TOKEN EOF on line 1
+312SUCCESS
 
 312FILE Programs Folder\program11
 312BEGIN StatementPart
@@ -1008,6 +1262,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 2
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 3
@@ -1022,6 +1277,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 3
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN WhileStatement
 312TOKEN while on line 4
@@ -1054,6 +1310,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 5
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x1' on line 6
@@ -1076,11 +1333,13 @@
 312END AssignmentStatement
 312END Statement
 312END StatementList
+312END StatementList
 312TOKEN end on line 7
 312TOKEN loop on line 7
 312END WhileStatement
 312END Statement
 312TOKEN ; on line 7
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'text' on line 8
@@ -1089,6 +1348,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 8
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 9
@@ -1101,6 +1361,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 9
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 10
@@ -1113,6 +1374,7 @@
 312END ProcedureStatement
 312END Statement
 312TOKEN ; on line 10
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN AssignmentStatement
 312TOKEN IDENTIFIER 'x2' on line 11
@@ -1139,6 +1401,7 @@
 312END AssignmentStatement
 312END Statement
 312TOKEN ; on line 11
+312BEGIN StatementList
 312BEGIN Statement
 312BEGIN ProcedureStatement
 312TOKEN call on line 12
@@ -1150,6 +1413,13 @@
 312TOKEN ) on line 12
 312END ProcedureStatement
 312END Statement
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
+312END StatementList
 312END StatementList
 312TOKEN end on line 13
 312END StatementPart
