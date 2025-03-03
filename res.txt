@@ -1,15 +1,34 @@
 Compilation Exception
-	Caused by Syntax Error on line 1: Expected begin but found 'begim' FILE: Programs Folder\program2
+	Caused by Caused by error whilst compiling StatementPart on line 1
+Caused by error whilst compiling Terminal on line 1
+Syntax Error on line 1: Expected begin but found 'begim' FILE: Programs Folder\program2
 
 Compilation Exception
-	Caused by Syntax Error on line 11: Expected if but found '' FILE: Programs Folder\program3
+	Caused by Caused by error whilst compiling StatementPart on line 11
+Caused by error whilst compiling StatementList on line 11
+Caused by error whilst compiling StatementList on line 11
+Caused by error whilst compiling StatementList on line 11
+Caused by error whilst compiling Statement on line 11
+Caused by error whilst compiling IfStatement on line 11
+Caused by error whilst compiling Terminal on line 11
+Syntax Error on line 11: Expected if but found '' FILE: Programs Folder\program3
 
 Compilation Exception
-	Caused by Syntax Error on line 7: Expected loop but found ';' FILE: Programs Folder\program5
+	Caused by Caused by error whilst compiling StatementPart on line 7
+Caused by error whilst compiling StatementList on line 7
+Caused by error whilst compiling StatementList on line 7
+Caused by error whilst compiling StatementList on line 7
+Caused by error whilst compiling Statement on line 7
+Caused by error whilst compiling WhileStatement on line 7
+Caused by error whilst compiling Terminal on line 7
+Syntax Error on line 7: Expected loop but found ';' FILE: Programs Folder\program5
 
 Compilation Exception
-	Caused by Syntax Error on line 4: Expected end but found 'else' FILE: Programs Folder\program7
+	Caused by Caused by error whilst compiling StatementPart on line 4
+Caused by error whilst compiling Terminal on line 4
+Syntax Error on line 4: Expected end but found 'else' FILE: Programs Folder\program7
 
 Compilation Exception
-	Caused by Syntax Error on line 12: Expected EOF but found 'call' FILE: Programs Folder\program8
+	Caused by Caused by error whilst compiling Terminal on line 12
+Syntax Error on line 12: Expected EOF but found 'call' FILE: Programs Folder\program8
 
